@@ -16,9 +16,16 @@ body {
 }
 
 .container {
-  @apply max-w-[1300px] mx-auto;
+  @apply max-w-[90%] lg:max-w-[1200px] mx-auto;
 }
 
 a {
-  @apply cursor-pointer;
+  @apply cursor-pointer ;
+}
+.slideout{
+  animation:slide 2s 1
+}
+@keyframes slide {
+  from{transform: translateX(100%);}
+  to{transform: translateX(0%);}
 }
