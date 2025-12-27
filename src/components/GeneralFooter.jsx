@@ -5,7 +5,7 @@ import {
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const GeneralFooter = () => {
   return (
@@ -14,68 +14,68 @@ const GeneralFooter = () => {
         <div className="flex flex-col lg:flex-row justify-between ">
           <div className="flex flex-col capitalize">
             <div className="font-bold uppercase">menu</div>
-            <Link to="/homepage" className="text-[#c0a742] hover:text-white">
+            <HashLink smooth to="/homepage" className="text-[#c0a742] hover:text-white">
               home
-            </Link>
-            <Link to="/about" className="text-[#c0a742] hover:text-white">
+            </HashLink>
+            <HashLink smooth to="/about" className="text-[#c0a742] hover:text-white">
               about us
-            </Link>
-            <Link className="text-[#c0a742] hover:text-white">contact</Link>
-            <Link className="text-[#c0a742] hover:text-white">products</Link>
+            </HashLink>
+            <HashLink to="/contact" smooth className="text-[#c0a742] hover:text-white">contact</HashLink>
+            <HashLink smooth className="text-[#c0a742] hover:text-white">products</HashLink>
           </div>
 
           <div className="flex flex-col capitalize">
             <div className="font-bold uppercase">legals</div>
-            <Link className="text-[#c0a742] hover:text-white">privacy</Link>
-            <Link className="text-[#c0a742] hover:text-white">services</Link>
-            <Link className="text-[#c0a742] hover:text-white">FAQs</Link>
+            <HashLink className="text-[#c0a742] hover:text-white">privacy</HashLink>
+            <HashLink className="text-[#c0a742] hover:text-white">services</HashLink>
+            <HashLink className="text-[#c0a742] hover:text-white">FAQs</HashLink>
           </div>
           <div className="flex flex-col capitalize">
             <div className="font-bold uppercase">your items</div>
-            <Link className="text-[#c0a742] hover:text-white">category</Link>
-            <Link className="text-[#c0a742] hover:text-white">cart</Link>
+            <HashLink className="text-[#c0a742] hover:text-white">category</HashLink>
+            <HashLink className="text-[#c0a742] hover:text-white">cart</HashLink>
           </div>
           <div className="flex flex-col">
             <div className="font-bold uppercase">follow us</div>
-            <Link className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
               {" "}
               <FaFacebook />
               <div className="">
                 facebook
               </div>
-            </Link>
+            </HashLink>
 
-            <Link className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
               {" "}
              <FaXTwitter />
               <div className="">
                 twitter
               </div>
-            </Link>
+            </HashLink>
            
-             <Link className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+             <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
               {" "}
               <FaYoutube />
               <div className="">
                 youtube
               </div>
-            </Link>
+            </HashLink>
 
-              <Link className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+              <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
               {" "}
                <FaSquareInstagram />
               <div className="">
                 Instagram
               </div>
-            </Link>
+            </HashLink>
 
-              <Link className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+              <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
               {" "}
                 <AiFillTikTok />
               <div className="">
                 tiktok
               </div>
-            </Link>
+            </HashLink>
            
           
           

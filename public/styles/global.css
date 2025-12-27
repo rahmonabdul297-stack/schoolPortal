@@ -14,18 +14,62 @@
 body {
   font-family: Sohn, Arial, Helvetica, sans-serif;
 }
+label {
+  @apply capitalize;
+}
 
 .container {
   @apply max-w-[90%] lg:max-w-[1200px] mx-auto;
 }
 
 a {
-  @apply cursor-pointer ;
+  @apply cursor-pointer;
 }
-.slideout{
-  animation:slide 2s 1
+.slideout {
+  animation: slide 2s 1;
 }
 @keyframes slide {
-  from{transform: translateX(100%);}
-  to{transform: translateX(0%);}
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.welcomeAnim {
+  animation: color 2s linear infinite;
+}
+
+@keyframes color {
+  0% {
+    background: linear-gradient(to right, #c0a742, black, #c0a742);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background: linear-gradient(to right, #c0a742, white, #c0a742);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(to right, black, #c0a742);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.product-card {
+  animation: rotatee 20s 1;
+}
+
+
+@keyframes rotatee {
+  0% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
 }

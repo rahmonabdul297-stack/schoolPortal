@@ -6,7 +6,7 @@ import { useState } from "react";
 import { GoTriangleDown } from "react-icons/go";
 
 
-const GeneralHeader = () => {
+const ProductHeader = () => {
   const [menu,setmenu]=useState(false)
   const handlemenu=()=>{
     setmenu((prev)=>!prev)
@@ -24,7 +24,7 @@ const GeneralHeader = () => {
         
       >
         {/* logo */}
-        <Link to=""  className="flex items-center ">
+        <Link to="/"  className="flex items-center ">
           <img
             src="/public/images/Gemini_Generated_Image_ngyqpzngyqpzngyq-removebg-preview.png"
             alt=""
@@ -38,15 +38,15 @@ const GeneralHeader = () => {
           </div>
         </Link>
         {/* Desktop navbar */}
-        <div
-          className=
-              "flex justify-between items-center gap-4 capitalize font-bold text-[#c0a742] "
-          
-        >
-          <Link to="/homepage">home</Link>
-          <Link to="/about">about us</Link>
-          <Link  to="/contact">contact</Link>
-          <Link to="/product">products</Link>
+       <div className="bg-gray-100 flex justify-between items-center gap-4 w-[600px] m-auto   text-[#c0a742] border rounded-lg">
+          <input
+            type="text"
+            placeholder="search products"
+            className="outline-[#c0a742] w-full  px-4 py-2 rounded-lg"
+          />
+          <div className="bg-[#c0a742] text-white lg:w-[20%] px-4 py-2 text-center uppercase">
+            search
+          </div>
         </div>
       <div className="flex items-center justify-between gap-3">
            <div className="flex items-center">
@@ -99,4 +99,4 @@ const GeneralHeader = () => {
   );
 };
 
-export default GeneralHeader;
+export default ProductHeader;
