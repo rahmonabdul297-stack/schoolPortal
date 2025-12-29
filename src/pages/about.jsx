@@ -69,7 +69,7 @@ const AboutPage = () => {
         <h4 className="text-center text-4xl font-bold capitalize">our team</h4>
         <div className="flex flex-col lg:flex-row justify-center items-center flex-wrap gap-4 py-10">
          {TeamsArr.map((items,id)=>(
- <div className="bg-[#c0a742] text-white pb-10 h-[400px] w-[250px] rounded-lg flex flex-col items-center gap-2" key={id}>
+ <div className="bg-[#c0a742] text-white pb-10 h-[400px] w-[90%] lg:w-[250px] rounded-lg flex flex-col items-center gap-2" key={id}>
             <img src={items.img} alt="" className="h-[70%] w-full rounded-t-[500px]" />
 
             <div className="font-black capitalize flex items-center">

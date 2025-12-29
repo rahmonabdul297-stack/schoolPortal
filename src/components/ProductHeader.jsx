@@ -63,11 +63,11 @@ const ProductHeader = () => {
          
           </div>
          </div>
-        <div className="text-black flex items-center gap-2">
+        <Link to="/cart" className="text-black flex items-center gap-2">
           <LuBaggageClaim size={30} className="relative"/> 
            <div className="bg-[#f00] flex items-center justify-center w-4 h-4 rounded-[50%] overflow-hidden  absolute top-6 text-white">{"0"}</div>
           cart
-        </div>
+        </Link>
       </div>
       </div>
       {/* mobile header */}

@@ -2,19 +2,25 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { PromoCardsArr } from "../components/Arrays/array";
 import { currencyFormatter } from "../utils/helper";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductPage = () => {
   const [Selected, setSelected] = useState();
-  const [Quantity,setQuantity]=useState(0)
-  
- 
+  const [Quantity, setQuantity] = useState(0);
+
+  const QuantityIncrease = () => {
+    setQuantity((prev) => prev + 1);
+  };
+  const navigate = useNavigate();
+  const handleCartDetails = (item) => {
+    navigate("/cart", { state: item });
+  };
 
   return (
     <div className="py-24 ">
       <section className="container flex flex-col lg:grid grid-cols-4 gap-1">
         <div className="col-span-1 bg-[#c0a742] h-[50vh] overflow-y-auto p-4 rounded-2xl  capitalize">
-          <div className="capitalize font-bold">type of shirt available</div>
+          <div className="capitalize font-bold">type of shirts available</div>
           {PromoCardsArr.map((item, id) => (
             <div key={id} className="flex items-center gap-2">
               <div className="text-red-500">{item.id}.</div>
@@ -31,7 +37,7 @@ const ProductPage = () => {
               {/* logo */}
               <Link
                 to="/"
-                className="flex items-center absolute  left-[500px] bottom-[300px]"
+                className="flex items-center absolute  left-[30%] lg:left-[500px] bottom-[5%] lg:bottom-[300px]"
               >
                 <img
                   src="/public/images/Gemini_Generated_Image_ngyqpzngyqpzngyq-removebg-preview.png"
@@ -59,8 +65,8 @@ const ProductPage = () => {
           <div className="bg-green-800 w-full p-3 text-white uppercase text-xl">
             top products
           </div>
-          <div className="flex  flex-wrap  justify-between px-2 perspective-[1000px]">
-            {PromoCardsArr.slice(0, 5).map((item, id) => (
+          <div className="flex  flex-wrap  justify-between px-2 gap-4">
+            {PromoCardsArr.map((item, id) => (
               <div
                 key={id}
                 className="w-[180px] lg:w-[220px] bg-white p-5 flex flex-col items-center gap-3 product-car"
@@ -70,9 +76,14 @@ const ProductPage = () => {
                   {item.shirtName}
                 </div>
                 <div className="flex items-center justify-between gap-2">
-                  <div>{currencyFormatter(item.newPrice)}</div>
+                  <div className="text-xs lg:text-sm">
+                    {currencyFormatter(item.newPrice)}
+                  </div>
 
-                  <div className="bg-[#c0a742] text-white capitalize px-2 text-sm">
+                  <div
+                    className="bg-[#c0a742] text-white capitalize px-2 text-xs  lg:text-sm"
+                    onClick={() => handleCartDetails(item)}
+                  >
                     Add to cart
                   </div>
                 </div>
@@ -81,14 +92,18 @@ const ProductPage = () => {
                   <div className="flex justify-between items-center gap-2">
                     <div
                       className="bg-[#c0a742]  p-1 rounded-md flex  justify-center"
-                      onClick={() => decrease(item.id)}
+                      onClick={
+                        Quantity === 0
+                          ? null
+                          : () => setQuantity((prev) => prev - 1)
+                      }
                     >
                       <FaMinus />
                     </div>
-                    <div>{Quantity}</div>
+                    <div>{Selected === item.id ? Quantity : 0}</div>
                     <div
                       className="bg-[#c0a742] p-1 rounded-md flex  justify-center"
-                      onClick={() =>setQuantity((prev)=>prev+1)}
+                      onClick={() => (setSelected(item.id), QuantityIncrease(item.id))}
                     >
                       <FaPlus />
                     </div>

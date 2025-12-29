@@ -18,9 +18,9 @@ const HomePage = () => {
             placeholder="search products"
             className="outline-[#c0a742] w-full  px-4 py-2 rounded-lg"
           />
-          <div className="bg-[#c0a742] text-white lg:w-[20%] px-4 py-2 text-center uppercase">
+          <Link to="/product" className="bg-[#c0a742] text-white lg:w-[20%] px-4 py-2 text-center uppercase">
             search
-          </div>
+          </Link>
         </div>
 
         <div className="text-white text-center text-3xl lg:text-4xl font-black w-[60%] lg:w-[30%] overflow-hidden m-auto uppercase">
