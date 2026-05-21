@@ -6,9 +6,21 @@
     format("opentype");
 }
 
+@theme {
+  --color-[#c0a742]: [#c0a742];
+  --color-AppWhite: #eee;
+  --color-AppBlack: #222;
+}
 * {
   box-sizing: border-box;
   overflow-x: hidden;
+}
+.ubuntu-sans-mono-font {
+  font-family: "Ubuntu Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "width" 100;
 }
 
 body {
@@ -23,10 +35,13 @@ label {
 }
 
 a {
-  @apply cursor-pointer;
+  @apply cursor-pointer capitalize;
 }
 .slideout {
-  animation: slide 2s 1;
+  animation: slide 0.2s 1;
+}
+.hero-sec {
+  background-image: url("/images/ayodelestud.webp");
 }
 @keyframes slide {
   from {
@@ -37,7 +52,7 @@ a {
   }
 }
 .welcomeAnim {
-  animation: color 2s linear infinite;
+  animation: color cubic-bezier(0.215, 0.610, 0.355, 1) linear infinite;
 }
 
 @keyframes color {
@@ -60,7 +75,6 @@ a {
 .product-card {
   animation: rotatee 20s 1;
 }
-
 
 @keyframes rotatee {
   0% {

@@ -5,9 +5,10 @@ import GeneralLayout from "./layouts/GeneralLayout";
 import HomePage from "./pages/homepage";
 import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
-import ProductPage from "./pages/product";
 import ProductLayout from "./layouts/ProductLayout";
-import CartPage from "./pages/cart";
+
+import Addmission from "./pages/addmission";
+import Faq from "./pages/faq";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
             <Route path="/homepage" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/product" element={<ProductPage />} />
-            <Route path="/cart" element={<CartPage />} />
+            <Route path="/addmission" element={<Addmission />} />
+            <Route path="/Faq" element={<Faq />} />
           </Route>
 
           <Route element={<ProductLayout />}></Route>

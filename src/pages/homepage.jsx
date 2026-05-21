@@ -1,53 +1,75 @@
-import { FaAngleRight } from "react-icons/fa6";
+import {
+  FaAngleRight,
+  FaArrowRightLong,
+  FaMinus,
+  FaPlus,
+} from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { currencyFormatter } from "../utils/helper";
-import { PromoCardsArr } from "../components/Arrays/array";
+import {
+  PromoCardsArr,
+  schoolQualifications,
+} from "../components/Arrays/array";
 import { IoMegaphoneOutline } from "react-icons/io5";
+import { useContext, useState } from "react";
+import { CartContext } from "../components/context/context";
 
 const HomePage = () => {
+  const { setChangebg } = useContext(CartContext);
+  const [selected, setSelected] = useState(0);
   return (
-    <div className="w-screen min-h-screen bg-white overflow-scroll">
-      <div className="bg-[url('/images/Gemini_Generated_Image_vwis6ovwis6ovwis.png')]  bg-cover bg-no-repeat h-screen py-10 flex flex-col">
-        <i className="bg-[#c0a742] text-white text-center text-2xl lg:text-4xl font-black lg:w-[30%] overflow-hidden m-auto uppercase p-5 rounded-lg welcomeAnim">
-          welcome !
-        </i>
+    <div
+      className="w-screen min-h-screen bg-white overflow-scroll "
+      onScroll={() => setChangebg((prev) => !prev)}
+    >
+      <div className="mt-20 w-full h-screen hero-sec bg-cover bg-center bg-no-repeat">
+        <div className="bg-black/60 h-full w-full py-10">
+          <div className="container text-white/65 text-xl py-20 flex flex-col gap-4">
+            <h4 className="text-[#c0a742] uppercase font-black font-[ubuntu-sans-mono-font] text-4xl overflow-hidden">
+              {" "}
+              Ayodele schools{" "}
+            </h4>
+            <p className="text-md lg:w-[50%] font-[ubuntu-sans-mono-font]">
+              {" "}
+              A place where learning meets excellence! We provide quality
+              education in a safe, friendly, and inspiring environment. Our
+              experienced teachers, modern facilities, and strong commitment to
+              academic success help every student reach their full potential.
+              Join us today and give your child the foundation for a brighter
+              future. Admissions are now open!
+            </p>
 
-        <div className="bg-gray-100 flex justify-between items-center gap-4 w-[90%] lg:w-[800px] m-auto   text-[#c0a742] border rounded-lg">
-          <input
-            type="text"
-            placeholder="search products"
-            className="outline-[#c0a742] w-full  px-4 py-2 rounded-lg"
-          />
-          <Link to="/product" className="bg-[#c0a742] text-white lg:w-[20%] px-4 py-2 text-center uppercase">
-            search
-          </Link>
-        </div>
-
-        <div className="text-white text-center text-3xl lg:text-4xl font-black w-[60%] lg:w-[30%] overflow-hidden m-auto uppercase">
-          curate your wardrope
+            <Link
+              to="/about"
+              className="bg-[#c0a742] text-white p-3 rounded-3xl lg:w-[20%] capitalize flex items-center gap-3 justify-center"
+            >
+              <div className="capitalize text-xl font-[ubuntu-sans-mono-font]">
+                apply now
+              </div>
+              <FaArrowRightLong />
+            </Link>
+          </div>
         </div>
       </div>
 
-      <section className="container flex gap-5 py-20">
-        <div>
-          <h4 className="text-3xl uppercase">summary about us</h4>
+      <section className=" flex gap-5 py-20">
+        <div className="container">
+          <h4 className="text-3xl font-[ubuntu-sans-mono-font] uppercase text-start py-10 text-[#c0a742]">
+            summary about us
+          </h4>
           <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Recusandae fuga nulla animi facere, ipsum nihil eum atque quae
-              ipsam quasi, consectetur soluta. Necessitatibus tempore,
-              architecto pariatur officia aliquam inventore asperiores
-            </p>
-
-            <p>
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-              atque necessitatibus nesciunt reiciendis nihil facilis voluptatum
-              doloremque esse impedit facere. Quis architecto vel eum id esse
-              odit officia perspiciatis atque assumenda consequuntur. Eum
-              laudantium, explicabo eius voluptas mollitia totam facilis minus,
-              accusantium dolore vel placeat autem. Quo rerum dicta repellat.
-            </p>
+            <div>
+              <span className="font-black"> Ayodele Schools</span>, founded by
+              the{" "}
+              <span className="font-black">Late Mrs Ajike Olanike Omobo</span>,
+              has been in existence for over three decades, first with her
+              Primary School session and then the College which came into
+              existence in the year 2006. Ayodele Schools take pride in being a
+              place where every pupil/ student can find an avenue for success,
+              and strive to find the best in all learners. We have a strong
+              placement and scholarship programs that have benefited and will
+              continue to benefit many studen...
+            </div>
             <Link
               to="/about"
               className="text-[#c0a742] hover:text-black flex items-center justify-end"
@@ -58,55 +80,32 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="container flex flex-col lg:flex-row justify-between gap-5 py-10">
-        <div className="lg:w-[20%]">
-          <h4 className="text-3xl uppercase">promo's here</h4>
-          <div className="text-xs text-[#999]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint
-            aperiam eos labore nostrum rerum! Dicta quos nam excepturi commodi
-            enim, sunt harum quam id inventore?
+      <section className=" bg-[#c0a742]/20 py-20">
+        <div className="container flex flex-col items-center justify-center">
+          <h4 className="text-3xl font-[ubuntu-sans-mono-font] uppercase text-center pb-6">
+            Why you should Choose Us
+          </h4>
+          <div className=" flex flex-col gap-2 ">
+            {schoolQualifications.map((cont) => (
+              <div
+                key={cont.id}
+                className="w-[500px] bg-white/40 p-3 flex flex-col gap-3 shadow-2xs rounded-3xl hover:scale-95 duration-1000"
+              >
+                <div className="flex justify-between">
+                  {" "}
+                  <h2>{cont.qua}</h2>{" "}
+                  <div onClick={() => setSelected(cont.id)}>
+                    {selected === cont.id ? <FaMinus /> : <FaPlus />}
+                  </div>
+                </div>
+                <div className="text-black/35 text-sm font-[ubuntu-sans-mono-font ]">
+                  {selected === cont.id ? cont.note : ""}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          {PromoCardsArr.slice(0,3).map((items,id) => (
-            <div className="bg-[#c0a742] w-[200px]  rounded-lg flex flex-col drop-shadow-2xl" key={id}>
-              <div className="flex justify-between gap-4">
-                <img
-                  src={items.productImg}
-                  alt=""
-                  className="h-[100px] shadow-xl shadow-black"
-                />
-                <div>
-                  <div className="bg-red-500 text-white w-max p-2 h-10 text-[10px] flex items-center line-through">
-                    {currencyFormatter(items.oldPrice)}
-                  </div>
-                  <div className="bg-green-700 text-white w-max p-2 h-10 text-[10px] flex items-center rounded-b">
-                    {currencyFormatter(items.newPrice)}
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-2 px-4">
-                {" "}
-                <div className="mt-3 text-xs text-[#dadada]  capitalize font-bold">
-                  <div>{items.shirtName}</div>
-                </div>
-                <img
-                  src="/public/images/1766574524942-removebg-preview.png"
-                  alt=""
-                  className="h-20 w-[50%]"
-                />
-              </div>
-
-              <Link to="/product"  className="bg-black text-white w-[50%] m-auto p-2 mb-2 text-center uppercase text-[10px] hover:scale-105 flex items-center gap-3">
-              <IoMegaphoneOutline />
-                get now!
-              </Link>
-            </div>
-          ))}
-          <Link to="/product" className="w-[100px] bg-[#c0a742] hover:bg-black duration-1000 ease-in-out text-center text-white capitalize py-1 rounded">see all</Link>
-        </div>
       </section>
-      
     </div>
   );
 };
