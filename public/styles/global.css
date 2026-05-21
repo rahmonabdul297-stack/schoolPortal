@@ -7,9 +7,9 @@
 }
 
 @theme {
-  --color-[#c0a742]: [#c0a742];
+  --color-AppYellow: #c0a742;
   --color-AppWhite: #eee;
-  --color-AppBlack: #222;
+  --color-AppBlack: #555;
 }
 * {
   box-sizing: border-box;
@@ -86,4 +86,13 @@ a {
   100% {
     transform: rotateY(0deg);
   }
+}
+.aboutCard{
+  @apply bg-AppYellow/20 col-span-2 p-6 rounded-3xl
+}
+.aboutCard2{
+   @apply bg-AppBlack/20 col-span-2 p-6 rounded-3xl
+}
+input,textarea{
+  @apply p-3 border-2 border-AppYellow rounded-xl
 }

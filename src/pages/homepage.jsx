@@ -15,7 +15,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../components/context/context";
 
 const HomePage = () => {
-  const { setChangebg } = useContext(CartContext);
+  const { setChangebg, dark } = useContext(CartContext);
   const [selected, setSelected] = useState(0);
   return (
     <div
@@ -25,7 +25,7 @@ const HomePage = () => {
       <div className="mt-20 w-full h-screen hero-sec bg-cover bg-center bg-no-repeat">
         <div className="bg-black/60 h-full w-full py-10">
           <div className="container text-white/65 text-xl py-20 flex flex-col gap-4">
-            <h4 className="text-[#c0a742] uppercase font-black font-[ubuntu-sans-mono-font] text-4xl overflow-hidden">
+            <h4 className="text-AppYellow uppercase font-black font-[ubuntu-sans-mono-font] text-4xl overflow-hidden">
               {" "}
               Ayodele schools{" "}
             </h4>
@@ -41,7 +41,7 @@ const HomePage = () => {
 
             <Link
               to="/about"
-              className="bg-[#c0a742] text-white p-3 rounded-3xl lg:w-[20%] capitalize flex items-center gap-3 justify-center"
+              className="bg-AppYellow text-white p-3 rounded-3xl lg:w-[20%] capitalize flex items-center gap-3 justify-center"
             >
               <div className="capitalize text-xl font-[ubuntu-sans-mono-font]">
                 apply now
@@ -54,10 +54,10 @@ const HomePage = () => {
 
       <section className=" flex gap-5 py-20">
         <div className="container">
-          <h4 className="text-3xl font-[ubuntu-sans-mono-font] uppercase text-start py-10 text-[#c0a742]">
+          <h4 className="text-3xl font-[ubuntu-sans-mono-font] uppercase text-start py-10 text-AppYellow">
             summary about us
           </h4>
-          <div>
+          <div className=" font-[ubuntu-sans-mono-font]">
             <div>
               <span className="font-black"> Ayodele Schools</span>, founded by
               the{" "}
@@ -72,7 +72,7 @@ const HomePage = () => {
             </div>
             <Link
               to="/about"
-              className="text-[#c0a742] hover:text-black flex items-center justify-end"
+              className="text-AppYellow hover:text-black flex items-center justify-end"
             >
               read more <FaAngleRight />
             </Link>
@@ -80,18 +80,18 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className=" bg-[#c0a742]/20 py-20">
+      <section className={` ${dark ? "bg-AppBlack" : "bg-AppYellow/20"} py-20`}>
         <div className="container flex flex-col items-center justify-center">
-          <h4 className="text-3xl font-[ubuntu-sans-mono-font] uppercase text-center pb-6">
+          <h4 className={`${dark?"text-AppWhite":""} text-xl lg:text-3xl font-[ubuntu-sans-mono-font] uppercase text-center pb-6`}>
             Why you should Choose Us
           </h4>
-          <div className=" flex flex-col gap-2 ">
+          <div className=" w-full lg:w-[500px] flex flex-col gap-2">
             {schoolQualifications.map((cont) => (
               <div
                 key={cont.id}
-                className="w-[85%] lg:w-[500px] bg-white/40 p-3 flex flex-col gap-3 shadow-2xs rounded-3xl hover:scale-95 duration-1000"
+                className={`${dark?"bg-AppWhite/65":"bg-AppYellow/20"} p-3 flex flex-col gap-3 shadow-2xs rounded-3xl hover:scale-95 duration-1000`}
               >
-                <div className="flex justify-between">
+                <div className="w-full flex justify-between">
                   {" "}
                   <h2>{cont.qua}</h2>{" "}
                   <div onClick={() => setSelected(cont.id)}>

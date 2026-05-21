@@ -21,7 +21,7 @@ const GeneralFooter = () => {
               <Link
                 to={itm.url}
                 key={itm.id}
-                className=" text-[#c0a742] hover:text-white flex items-center gap-2"
+                className=" text-AppYellow hover:text-white flex items-center gap-2"
               >
                 {itm.nav}
               </Link>
@@ -30,17 +30,17 @@ const GeneralFooter = () => {
 
           <div className="flex flex-col capitalize">
             <div className="font-bold uppercase">legals</div>
-            <HashLink className="text-[#c0a742] hover:text-white">
+            <HashLink className="text-AppYellow hover:text-white">
               scholarships scheme
             </HashLink>
-            <HashLink className="text-[#c0a742] hover:text-white">
+            <HashLink className="text-AppYellow hover:text-white">
               policy
             </HashLink>
              {navbar.slice(5,6).map((itm) => (
               <Link
                 to={itm.url}
                 key={itm.id}
-                className=" text-[#c0a742] hover:text-white flex items-center gap-2"
+                className=" text-AppYellow hover:text-white flex items-center gap-2"
               >
                 {itm.nav}
               </Link>
@@ -49,31 +49,31 @@ const GeneralFooter = () => {
 
           <div className="flex flex-col">
             <div className="font-bold uppercase">follow us</div>
-            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-AppYellow hover:text-white capitalize ">
               {" "}
               <FaFacebook />
               <div className="">facebook</div>
             </HashLink>
 
-            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-AppYellow hover:text-white capitalize ">
               {" "}
               <FaXTwitter />
               <div className="">twitter</div>
             </HashLink>
 
-            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-AppYellow hover:text-white capitalize ">
               {" "}
               <FaYoutube />
               <div className="">youtube</div>
             </HashLink>
 
-            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-AppYellow hover:text-white capitalize ">
               {" "}
               <FaSquareInstagram />
               <div className="">Instagram</div>
             </HashLink>
 
-            <HashLink className="flex items-center gap-3 text-[#c0a742] hover:text-white capitalize ">
+            <HashLink className="flex items-center gap-3 text-AppYellow hover:text-white capitalize ">
               {" "}
               <AiFillTikTok />
               <div className="">tiktok</div>
