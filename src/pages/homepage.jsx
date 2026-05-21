@@ -89,7 +89,7 @@ const HomePage = () => {
             {schoolQualifications.map((cont) => (
               <div
                 key={cont.id}
-                className="w-[500px] bg-white/40 p-3 flex flex-col gap-3 shadow-2xs rounded-3xl hover:scale-95 duration-1000"
+                className="w-[85%] lg:w-[500px] bg-white/40 p-3 flex flex-col gap-3 shadow-2xs rounded-3xl hover:scale-95 duration-1000"
               >
                 <div className="flex justify-between">
                   {" "}
