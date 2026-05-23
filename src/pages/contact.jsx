@@ -183,13 +183,10 @@ const ContactPage = () => {
                         href={`mailto:${SCHOOL_EMAIL}`}
                         className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
                       >
-                        {SCHOOL_EMAIL}
+                        {SCHOOL_EMAIL2.toLowerCase()}
                       </a>
-                      <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
-                        or
-                      </span>
                       <a
-                        href={`mailto:${SCHOOL_EMAIL2}`}
+                        href={`mailto:${SCHOOL_EMAIL.toLowerCase()}`}
                         className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
                       >
                         {SCHOOL_EMAIL2}
