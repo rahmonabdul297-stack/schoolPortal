@@ -57,7 +57,7 @@ export const schoolQualifications =[
 ]
 
 export const homeStats = [
-  { id: 1, value: "30+", label: "Years of excellence" },
+  { id: 1, value: "20+", label: "Years of excellence" },
   { id: 2, value: "2006", label: "College section founded" },
   { id: 3, value: "2", label: "Primary & secondary" },
   { id: 4, value: "∞", label: "Dreams nurtured" },
@@ -170,6 +170,7 @@ export const faqsArr = [
 ];
 
 export const SCHOOL_EMAIL = "ayodelecollege247@gmail.com";
+export const SCHOOL_EMAIL2 = "ayodelecollegeofexcellence85@yahoo.com";
 
 export const RESULT_PORTAL_URL =
   "https://result-management-kappa.vercel.app/";

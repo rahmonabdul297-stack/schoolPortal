@@ -17,6 +17,7 @@ import { CartContext } from "../components/context/context";
 import {
   contactSchoolInfo,
   SCHOOL_EMAIL,
+  SCHOOL_EMAIL2,
 } from "../components/Arrays/array";
 import { errorNotification, successNotification } from "../utils/helper";
 
@@ -184,6 +185,15 @@ const ContactPage = () => {
                       >
                         {SCHOOL_EMAIL}
                       </a>
+                      <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
+                        or
+                      </span>
+                      <a
+                        href={`mailto:${SCHOOL_EMAIL2}`}
+                        className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
+                      >
+                        {SCHOOL_EMAIL2}
+                      </a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -217,7 +227,7 @@ const ContactPage = () => {
                     </span>
                     <div>
                       <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
-                        Phone
+                        call / chat on whatsapp
                       </span>
                       <span className="opacity-80">
                       08037217256, 08032322688

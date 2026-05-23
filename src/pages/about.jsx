@@ -137,7 +137,7 @@ const AboutPage = () => {
             Our schools
           </h4>
 
-          <div className="lg:grid grid-cols-3 gap-6">
+          <div className="flex flex-col items-center justify-center  lg:grid grid-cols-3 gap-6">
             <img
               src={foodArr[Food]}
               className="col-span-2 border-2 rounded-3xl h-[400px] w-[600px]"
