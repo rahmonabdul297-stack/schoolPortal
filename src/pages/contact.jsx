@@ -40,7 +40,7 @@ function buildEmailHtml({ name, email, phone, subject, message }) {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   const nl = (s) => safe(s).replace(/\n/g, "<br/>");
-  return message
+  return message;
 }
 
 const ContactPage = () => {
@@ -133,7 +133,9 @@ const ContactPage = () => {
   } rounded-3xl border-2 border-AppYellow/30 p-6 sm:p-8 shadow-lg contact-card-lift`;
 
   return (
-    <div className={`pt-20 min-h-screen ${dark ? "bg-AppDark" : "bg-AppWhite"}`}>
+    <div
+      className={`pt-20 min-h-screen ${dark ? "bg-AppDark" : "bg-AppWhite"}`}
+    >
       <Helmet>
         <title>Contact Us | Ayodele Schools</title>
         <meta
@@ -162,7 +164,9 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className={`py-14 sm:py-20 ${dark ? "bg-AppDarkMuted/50" : "bg-AppYellow/10"}`}>
+      <section
+        className={`py-14 sm:py-20 ${dark ? "bg-AppDarkMuted/50" : "bg-AppYellow/10"}`}
+      >
         <div className="container">
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
             <aside className="lg:col-span-1 flex flex-col gap-6 contact-reveal">
@@ -181,14 +185,14 @@ const ContactPage = () => {
                       </span>
                       <a
                         href={`mailto:${SCHOOL_EMAIL2}`}
-                        className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
+                        className="hover:text-AppYellow transition-colors duration-300"
                       >
                         {SCHOOL_EMAIL2.toLowerCase()}
                       </a>
-<span>{",  "}</span>
+                      <span>{",  "}</span>
                       <a
                         href={`mailto:${SCHOOL_EMAIL}`}
-                        className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
+                        className="hover:text-AppYellow transition-colors duration-300"
                       >
                         {SCHOOL_EMAIL.toLowerCase()}
                       </a>
@@ -228,7 +232,7 @@ const ContactPage = () => {
                         call / chat on whatsapp
                       </span>
                       <span className="opacity-80">
-                      08037217256, 08032322688
+                        08037217256, 08032322688
                       </span>
                     </div>
                   </li>
@@ -296,8 +300,8 @@ const ContactPage = () => {
                     dark ? "text-AppCream/75" : "text-AppBlack/75"
                   }`}
                 >
-                  Before you visit or apply, here is a quick overview of
-                  Ayodele Schools — one of the leading institutions in Sagamu and
+                  Before you visit or apply, here is a quick overview of Ayodele
+                  Schools — one of the leading institutions in Sagamu and
                   surrounding communities.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -305,7 +309,9 @@ const ContactPage = () => {
                     <div
                       key={item.id}
                       className={`contact-reveal rounded-2xl p-4 border border-AppYellow/25 ${
-                        dark ? "bg-AppDarkMuted border border-AppYellow/15" : "bg-AppYellow/10"
+                        dark
+                          ? "bg-AppDarkMuted border border-AppYellow/15"
+                          : "bg-AppYellow/10"
                       } hover:border-AppYellow transition-colors duration-500`}
                       style={{ animationDelay: `${0.15 + index * 0.1}s` }}
                     >
@@ -368,7 +374,9 @@ const ContactPage = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="e.g. Adeola Ogunleye"
-                        className={dark ? "text-AppCream placeholder:text-AppMuted" : ""}
+                        className={
+                          dark ? "text-AppCream placeholder:text-AppMuted" : ""
+                        }
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -383,7 +391,9 @@ const ContactPage = () => {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="e.g. 0803 000 0000"
-                        className={dark ? "text-AppCream placeholder:text-AppMuted" : ""}
+                        className={
+                          dark ? "text-AppCream placeholder:text-AppMuted" : ""
+                        }
                       />
                     </div>
                   </div>
@@ -402,7 +412,9 @@ const ContactPage = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="your.email@example.com"
-                        className={dark ? "text-AppCream placeholder:text-AppMuted" : ""}
+                        className={
+                          dark ? "text-AppCream placeholder:text-AppMuted" : ""
+                        }
                       />
                     </div>
                     <div className="flex flex-col gap-2">
