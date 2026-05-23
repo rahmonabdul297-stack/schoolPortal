@@ -180,16 +180,17 @@ const ContactPage = () => {
                         Email
                       </span>
                       <a
-                        href={`mailto:${SCHOOL_EMAIL}`}
+                        href={`mailto:${SCHOOL_EMAIL2}`}
                         className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
                       >
                         {SCHOOL_EMAIL2.toLowerCase()}
                       </a>
+<span>{",  "}</span>
                       <a
-                        href={`mailto:${SCHOOL_EMAIL.toLowerCase()}`}
+                        href={`mailto:${SCHOOL_EMAIL}`}
                         className="hover:text-AppYellow transition-colors duration-300 break-all normal-case"
                       >
-                        {SCHOOL_EMAIL2}
+                        {SCHOOL_EMAIL.toLowerCase()}
                       </a>
                     </div>
                   </li>
