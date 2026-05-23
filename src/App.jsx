@@ -9,6 +9,8 @@ import ProductLayout from "./layouts/ProductLayout";
 
 import Addmission from "./pages/addmission";
 import Faq from "./pages/faq";
+import ResultPortal from "./pages/resultPortal";
+import Scholarship from "./pages/scholarship";
 
 function App() {
   return (
@@ -30,7 +32,9 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/addmission" element={<Addmission />} />
-            <Route path="/Faq" element={<Faq />} />
+            <Route path="/result-portal" element={<ResultPortal />} />
+            <Route path="/scholarship" element={<Scholarship />} />
+            <Route path="/faq" element={<Faq />} />
           </Route>
 
           <Route element={<ProductLayout />}></Route>

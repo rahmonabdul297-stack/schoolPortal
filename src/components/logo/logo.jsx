@@ -13,7 +13,7 @@ const Logo = () => {
           className="h-16 w-16 rounded-[50%]"
         />
         <div className="flex flex-col text-xl font-black uppercase overflow-hidden">
-          <span className={dark?"text-AppWhite":"text-AppBlack"}>Ayodele</span>
+          <span className={dark ? "text-AppCream" : "text-AppBlack"}>Ayodele</span>
           <span className="text-AppYellow">schools</span>
         </div>
       </Link>

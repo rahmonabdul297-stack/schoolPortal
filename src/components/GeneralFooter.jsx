@@ -12,7 +12,7 @@ import { navbar } from "./Arrays/array";
 
 const GeneralFooter = () => {
   return (
-    <div className="bg-[#222] py-10">
+    <div className="bg-AppDark border-t border-AppYellow/20 py-10">
       <div className="container lg:px-20 flex flex-col text-white">
         <div className="flex flex-col lg:flex-row justify-between gap-5">
           <div className="flex flex-col capitalize">
@@ -30,13 +30,13 @@ const GeneralFooter = () => {
 
           <div className="flex flex-col capitalize">
             <div className="font-bold uppercase">legals</div>
-            <HashLink className="text-AppYellow hover:text-white">
-              scholarships scheme
-            </HashLink>
-            <HashLink className="text-AppYellow hover:text-white">
-              policy
-            </HashLink>
-             {navbar.slice(5,6).map((itm) => (
+            <Link
+              to="/scholarship"
+              className="text-AppYellow hover:text-white"
+            >
+              scholarship scheme
+            </Link>
+             {navbar.slice(6, 7).map((itm) => (
               <Link
                 to={itm.url}
                 key={itm.id}

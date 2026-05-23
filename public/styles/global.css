@@ -8,8 +8,14 @@
 
 @theme {
   --color-AppYellow: #c0a742;
-  --color-AppWhite: #eee;
-  --color-AppBlack: #555;
+  --color-AppYellowBright: #d9c25e;
+  --color-AppWhite: #f8f6f1;
+  --color-AppBlack: #2a3142;
+  --color-AppDark: #0e1118;
+  --color-AppDarkElevated: #171d2b;
+  --color-AppDarkMuted: #232b3d;
+  --color-AppCream: #ede8dc;
+  --color-AppMuted: #9aa5b8;
 }
 * {
   box-sizing: border-box;
@@ -25,6 +31,32 @@
 
 body {
   font-family: Sohn, Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: #0e1118;
+  color: #ede8dc;
+}
+
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select {
+  background-color: #171d2b;
+  border-color: rgba(192, 167, 66, 0.45);
+  color: #ede8dc;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: rgba(237, 232, 220, 0.4);
+}
+
+.dark-theme input:focus,
+.dark-theme textarea:focus,
+.dark-theme select:focus {
+  border-color: #d9c25e;
+  box-shadow: 0 0 0 3px rgba(217, 194, 94, 0.28);
 }
 label {
   @apply capitalize;
@@ -90,9 +122,71 @@ a {
 .aboutCard{
   @apply bg-AppYellow/20 col-span-2 p-6 rounded-3xl
 }
-.aboutCard2{
-   @apply bg-AppBlack/20 col-span-2 p-6 rounded-3xl
+.aboutCard2 {
+  @apply bg-AppDarkElevated border border-AppYellow/20 col-span-2 p-6 rounded-3xl text-AppCream;
 }
-input,textarea{
-  @apply p-3 border-2 border-AppYellow rounded-xl
+input,
+textarea,
+select {
+  @apply p-3 border-2 border-AppYellow rounded-xl w-full bg-transparent outline-none transition-all duration-300 focus:border-AppBlack focus:ring-2 focus:ring-AppYellow/40;
+}
+
+.contact-hero-in {
+  animation: contactFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.contact-reveal {
+  animation: contactFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.contact-reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+.contact-reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+.contact-reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+.contact-reveal-delay-4 {
+  animation-delay: 0.48s;
+}
+
+.contact-card-lift {
+  @apply transition-all duration-500 ease-out;
+}
+.contact-card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(192, 167, 66, 0.22);
+}
+
+.dark-theme .contact-card-lift:hover {
+  box-shadow: 0 16px 48px rgba(217, 194, 94, 0.15);
+}
+
+.contact-pulse-dot {
+  animation: contactPulse 2s ease-in-out infinite;
+}
+
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contactPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
 }

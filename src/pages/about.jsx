@@ -1,5 +1,5 @@
 import { BiSolidMedal } from "react-icons/bi";
-import { schoolQualifications, TeamsArr } from "../components/Arrays/array";
+import { EventsArr, schoolQualifications } from "../components/Arrays/array";
 import { Helmet } from "react-helmet-async";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../components/context/context";
@@ -7,23 +7,31 @@ import { CartContext } from "../components/context/context";
 const AboutPage = () => {
   const { dark } = useContext(CartContext);
   const [Food, setFood] = useState(0);
+  const [eventIndex, setEventIndex] = useState(0);
   const foodArr = [
     "/images/school frontage.webp",
     "/images/school img.webp",
     "/images/school img 3.webp",
   ];
-  const ChangingImage = () => {
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setFood((prevIndex) =>
-          prevIndex === foodArr.length - 1 ? 0 : prevIndex + 1,
-        );
-      }, 5000); // 120000ms = 2 minutes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFood((prevIndex) =>
+        prevIndex === foodArr.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 5000);
 
-      return () => clearInterval(interval); // cleanup
-    }, []);
-  };
-  ChangingImage();
+    return () => clearInterval(interval);
+  }, [foodArr.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEventIndex((prevIndex) =>
+        prevIndex === EventsArr.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="pt-20">
       <Helmet>
@@ -35,7 +43,7 @@ const AboutPage = () => {
       </Helmet>
       <section className="flex flex-col lg:flex-row">
         <div
-          className={`px-10  lg:w-[50%] ${dark ? "bg-AppBlack text-AppWhite" : "bg-AppWhite text-AppBlack"} border-r-20 bg-AppBlack`}
+          className={`px-10 lg:w-[50%] ${dark ? "bg-AppDarkElevated text-AppCream" : "bg-AppWhite text-AppBlack"} border-r-20`}
         >
           <div className=" text-xl py-20 flex flex-col gap-4 ">
             <i className="text-AppYellow uppercase font-black font-[ubuntu-sans-mono-font] text-4xl overflow-hidden">
@@ -86,9 +94,11 @@ const AboutPage = () => {
         <img src="/images/school img.webp" alt="" className="lg:w-[50%]" />
       </section>
 
-      <h4 className="text-AppBlack text-center py-10 font-[ubuntu-sans-mono-font] text-6xl">
-        Our Principles
-      </h4>
+      <h4
+            className={`${dark ? "text-AppCream" : "text-AppBlack"} text-center py-10 font-[ubuntu-sans-mono-font] text-6xl`}
+          >
+            Our principles
+          </h4>
       <section className=" container flex flex-col lg:grid grid-cols-4 py-10 gap-4">
         <div className={dark ? "aboutCard2" : "aboutCard"}>
           <h4 className="text-AppYellow uppercase font-black font-[ubuntu-sans-mono-font] text-xl overflow-hidden">
@@ -119,10 +129,10 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className={`${dark ? "bg-AppBlack" : ""} py-10 `}>
-        <section className="container flex lg:grid flex-col items-center">
+      <section className={`${dark ? "bg-AppDarkMuted" : ""} py-10 `}>
+        <section className="container flex lg:grid flex-col items-center gap-5">
           <h4
-            className={`${dark ? "text-AppWhite " : "text-AppBlack"} text-center py-10 font-[ubuntu-sans-mono-font] text-6xl`}
+            className={`${dark ? "text-AppCream" : "text-AppBlack"} text-center py-10 font-[ubuntu-sans-mono-font] text-6xl`}
           >
             Our schools
           </h4>
@@ -132,10 +142,10 @@ const AboutPage = () => {
               src={foodArr[Food]}
               className="col-span-2 border-2 rounded-3xl h-[400px] w-[600px]"
             />
-            <div className="col-span-1">
+            <div className="col-span-1 flex flex-col gap-3">
               <div>
                 <h4 className="text-AppYellow uppercase font-black font-[ubuntu-sans-mono-font] text-xl overflow-hidden"> Primary Section </h4>
-               <div className={`${dark?"text-AppWhite":"text-AppBlack"} font-[ubuntu-sans-mono-font] text-xl`}>
+               <div className={`${dark ? "text-AppCream" : "text-AppBlack"} font-[ubuntu-sans-mono-font] text-xl`}>
                  This is the foundation of formal education, typically
                 encompassing kindergarten/reception through to the end of
                 elementary school (usually ages 5 to 11). The focus here is on
@@ -146,7 +156,7 @@ const AboutPage = () => {
 
               <div>
                 <h4 className="text-AppYellow uppercase font-black font-[ubuntu-sans-mono-font] text-xl overflow-hidden">Secondary Section</h4>
-               <div className={`${dark?"text-AppWhite":"text-AppBlack"} font-[ubuntu-sans-mono-font] text-xl`}>
+               <div className={`${dark ? "text-AppCream" : "text-AppBlack"} font-[ubuntu-sans-mono-font] text-xl`}>
                  This represents the next level of schooling, often divided into
                 middle school and high school (usually ages 11 to 18). Here, the
                 curriculum becomes much more specialized, preparing students for
@@ -157,6 +167,70 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+      </section>
+
+      <section className={`${dark ? "bg-AppDark" : "bg-AppYellow/20"} py-10`}>
+        <div className="container">
+          <h4
+            className={`${dark ? "text-AppCream" : "text-AppBlack"} text-center py-10 font-[ubuntu-sans-mono-font] text-6xl`}
+          >
+            School Events
+          </h4>
+
+          <div className="flex flex-col items-center gap-6">
+            <div className="relative w-full max-w-4xl">
+              <img
+                src={EventsArr[eventIndex].EventsImg}
+                alt={EventsArr[eventIndex].Events}
+                className="w-full h-[320px] lg:h-[450px] object-cover border-2 rounded-3xl"
+              />
+              <h5
+                className={`${dark ? "text-AppCream" : "text-AppBlack"} text-center mt-4 font-[ubuntu-sans-mono-font] text-2xl uppercase font-black`}
+              >
+                {EventsArr[eventIndex].Events}
+              </h5>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {EventsArr.map((event, index) => (
+                <button
+                  key={event.id}
+                  type="button"
+                  onClick={() => setEventIndex(index)}
+                  className={`h-3 w-3 rounded-full transition-colors ${
+                    eventIndex === index
+                      ? "bg-AppYellow"
+                      : dark
+                        ? "bg-AppMuted/50"
+                        : "bg-AppBlack/30"
+                  }`}
+                  aria-label={`Show ${event.Events}`}
+                />
+              ))}
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              {EventsArr.map((event, index) => (
+                <button
+                  key={event.id}
+                  type="button"
+                  onClick={() => setEventIndex(index)}
+                  className={`overflow-hidden rounded-xl border-2 transition-opacity ${
+                    eventIndex === index
+                      ? "border-AppYellow opacity-100"
+                      : "border-transparent opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img
+                    src={event.EventsImg}
+                    alt={event.Events}
+                    className="h-16 w-24 object-cover lg:h-20 lg:w-32"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

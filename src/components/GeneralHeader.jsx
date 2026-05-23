@@ -1,154 +1,131 @@
 import { Link, useLocation } from "react-router-dom";
-import { LuBaggageClaim } from "react-icons/lu";
 import { TfiMenu } from "react-icons/tfi";
-import {
-  IoIosContact,
-  IoIosContacts,
-  IoIosMoon,
-  IoMdClose,
-} from "react-icons/io";
-import { useContext, useState } from "react";
-import { GoTriangleDown } from "react-icons/go";
-import { FaHome } from "react-icons/fa";
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import { TiShoppingCart } from "react-icons/ti";
-import {
-  FaFacebook,
-  FaFile,
-  FaSquareInstagram,
-  FaXTwitter,
-  FaYoutube,
-} from "react-icons/fa6";
-import { AiFillTikTok } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "./context/context";
 import Logo from "./logo/logo";
 import { navbar } from "./Arrays/array";
-import { CiLight, CiSettings } from "react-icons/ci";
-import { IoMoonOutline } from "react-icons/io5";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import ThemeToggle from "./ThemeToggle";
 
 const GeneralHeader = () => {
-  const [menu, setmenu] = useState(false);
-  const [showSettings, setshowSettings] = useState(false);
-  const [selected, setSelected] = useState(1);
-  const { state } = useLocation();
-  const handlemenu = () => {
-    setmenu((prev) => !prev);
+  const [menu, setMenu] = useState(false);
+  const { pathname } = useLocation();
+  const { dark } = useContext(CartContext);
+
+  useEffect(() => {
+    setMenu(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menu ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menu]);
+
+  const navLinkClass = (url) => {
+    const active =
+      pathname === url || (url === "/homepage" && pathname === "/");
+    return active
+      ? "text-AppYellow underline underline-offset-4"
+      : "hover:text-AppYellow transition-colors duration-200";
   };
-  const [AccDrop, setAccDrop] = useState(false);
-  const handleAccDrop = () => {
-    setAccDrop((prev) => !prev);
-  };
-  const { Changebg, setDark, dark } = useContext(CartContext);
 
   return (
-    <div
-      className={`w-full ${dark ? "bg-AppBlack" : "bg-AppWhite "} py-2 fixed shadow-2xl`}
+    <header
+      className={`w-full py-2 z-1000 fixed top-0 left-0  shadow-lg border-b ${
+        dark
+          ? "bg-AppDark/95 backdrop-blur-md border-AppYellow/25 text-AppCream"
+          : "bg-AppWhite border-AppYellow/30 text-AppBlack"
+      }`}
     >
-      {/* desktop header */}
-      <div className="container hidden lg:flex justify-between items-center">
-        {/* logo */}
+      <div className="container hidden lg:flex justify-between items-center gap-4">
         <Logo />
-        {/* Desktop navbar */}
-        <div
-          className={`flex justify-between items-center text-[14px] gap-4 capitalize font-bold  ${dark ? "text-AppWhite" : "text-AppBlack"}`}
+
+        <nav
+          className="flex flex-wrap justify-center items-center text-[13px] xl:text-[14px] gap-3 xl:gap-4 capitalize font-bold font-[ubuntu-sans-mono-font]"
+          aria-label="Main navigation"
         >
           {navbar.map((itm) => (
             <Link
               to={itm.url}
               key={itm.id}
-              className={selected === itm.id ? "text-AppYellow underline" : ""}
-              onClick={() => setSelected(itm.id)}
+              target={itm.target || undefined}
+              rel={itm.target === "_blank" ? "noopener noreferrer" : undefined}
+              className={navLinkClass(itm.url)}
             >
               {itm.nav}
             </Link>
           ))}
-          <BsThreeDotsVertical size={20} onClick={()=>setshowSettings((prev)=>!prev)}/>
-          <div
-            className={showSettings?`fixed right-0 top-20 p-4 border-l-4 border-l-AppBlack ${dark ? "bg-AppBlack text-AppWhite" : "bg-AppWhite text-AppBlack"}`:"hidden"}
-            onClick={()=>setDark((prev)=>!prev)}
-          >
-            {dark ? (
-              <div className="flex items-center gap-2 px-3">
-                <IoMoonOutline />
-                <span>dark mode</span>
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 px-3">
-                <CiLight />
-                <span>light mode</span>
-              </div>
-            )}
-          </div>
-        </div>
+        </nav>
+
+        <ThemeToggle />
       </div>
-      {/* mobile header */}
-      <div className="lg:hidden container flex justify-between items-center">
+
+      <div className="lg:hidden container flex justify-between items-center gap-3">
         <Logo />
 
-        <div
-          className={`${dark ? "border p-2 rounded-lg text-AppWhite" : "border p-2 rounded-lg"}`}
-          onClick={handlemenu}
-        >
-          {menu ? <IoMdClose /> : <TfiMenu />}
-        </div>
-        <div
-          className={
-            menu
-              ? "bg-white/55 h-screen w-[100%] mx-auto fixed top-20 left-0 flex justify-end"
-              : "hidden"
-          }
-        >
-          <div
-            className={
-              menu
-                ? "w-[70%] bg-AppWhite text-AppYellow h-full border slideout flex flex-col justify-between items-start gap-4  font-bold text-xl uppercase pb-28 px-6"
-                : "hidden"
-            }
+        <div className="flex items-center gap-2">
+          <ThemeToggle compact />
+          <button
+            type="button"
+            onClick={() => setMenu((prev) => !prev)}
+            aria-expanded={menu}
+            aria-label={menu ? "Close menu" : "Open menu"}
+            className={`border-2 border-AppYellow rounded-lg p-2 transition-colors ${
+              dark ? "text-AppCream" : "text-AppBlack"
+            }`}
           >
-            <div className="flex flex-col gap-3 py-5">
-              {navbar.map((itm) => (
-                <Link to={itm.url} key={itm.id} onClick={handlemenu}>
-                  {itm.nav}
-                </Link>
-              ))}
-            </div>
-            <div className="w-full ">
-              <div className="text-sm flex justify-between items-center text-AppBlack mb-0 border-t border-AppBlack py-2">
-                <div
-                  className="flex items-center gap-2"
-                  onClick={() => setshowSettings((prev) => !prev)}
-                >
-                  <CiSettings size={30} />
-                  <span>settings</span>
-                </div>
-                <GoTriangleDown />
-              </div>
-              <div
-                className={
-                  showSettings
-                    ? "flex items-center gap-1 text-xs text-AppBlack"
-                    : "hidden"
-                }
-                onClick={() => setDark((prev) => !prev)}
-              >
-                {dark ? (
-                  <div className="flex items-center gap-2 px-3">
-                    <IoMoonOutline />
-                    <span>dark mode</span>
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-2 px-3">
-                    <CiLight />
-                    <span>light mode</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+            {menu ? <IoMdClose size={22} /> : <TfiMenu size={22} />}
+          </button>
         </div>
       </div>
-    </div>
+
+      {menu && (
+        <div
+          className="lg:hidden fixed inset-0 top-20 z-[99] bg-black/50"
+          onClick={() => setMenu(false)}
+          aria-hidden
+        />
+      )}
+
+      <nav
+        className={`lg:hidden fixed top-20 right-0 z-[100] h-[calc(100vh-56px)] w-[min(85%,320px)] border-l-2 border-AppYellow slideout flex flex-col ${
+          menu ? "translate-x-0" : "translate-x-full pointer-events-none"
+        } transition-transform duration-300 ${
+          dark ? "bg-AppDarkElevated text-AppCream" : "bg-AppWhite text-AppBlack"
+        }`}
+        aria-label="Mobile navigation"
+      >
+        <div className="flex flex-col gap-1 p-6 overflow-y-auto flex-1 font-[ubuntu-sans-mono-font] font-bold uppercase text-base">
+          {navbar.map((itm) => (
+            <Link
+              to={itm.url}
+              key={itm.id}
+              target={itm.target || undefined}
+              rel={itm.target === "_blank" ? "noopener noreferrer" : undefined}
+              onClick={() => setMenu(false)}
+              className={`py-3 border-b ${
+                dark ? "border-AppMuted/25" : "border-AppBlack/10"
+              } ${navLinkClass(itm.url)}`}
+            >
+              {itm.nav}
+            </Link>
+          ))}
+        </div>
+
+        <div
+          className={`p-6 border-t-2 border-AppYellow ${
+            dark ? "bg-AppDarkMuted" : "bg-AppYellow/10"
+          }`}
+        >
+          <p className="text-xs uppercase tracking-wide opacity-70 mb-3">
+            Appearance
+          </p>
+          <ThemeToggle className="w-full justify-center" />
+        </div>
+      </nav>
+    </header>
   );
 };
 
