@@ -185,16 +185,16 @@ const ContactPage = () => {
                       </span>
                       <a
                         href={`mailto:${SCHOOL_EMAIL2}`}
-                        className="hover:text-AppYellow transition-colors duration-300"
+                        className="hover:text-AppYellow transition-colors duration-300 lowercase"
                       >
-                        {SCHOOL_EMAIL2.toLowerCase()}
+                        {SCHOOL_EMAIL2}
                       </a>
-                      <span>{",  "}</span>
+                      <br />
                       <a
                         href={`mailto:${SCHOOL_EMAIL}`}
-                        className="hover:text-AppYellow transition-colors duration-300"
+                        className="hover:text-AppYellow transition-colors duration-300 lowercase"
                       >
-                        {SCHOOL_EMAIL.toLowerCase()}
+                        {SCHOOL_EMAIL}
                       </a>
                     </div>
                   </li>
@@ -204,14 +204,15 @@ const ContactPage = () => {
                     </span>
                     <div>
                       <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
-                        Location
+                        Locations
                       </span>
                       <span>
                         <span>
                           6. Babatunde Awosanya Street, Jesu Walalaye Aiyegbami,
                           Sagamu.
                         </span>
-                        <span>{",  "}</span>
+                        <br />
+                        <br />
                         <span>
                           Km 3, Falilat Ogunkoya Avenue, Ode-Lemo Road, Sabo,
                           Sagamu, Ogun State
