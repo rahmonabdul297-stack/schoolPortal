@@ -206,7 +206,17 @@ const ContactPage = () => {
                       <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
                         Location
                       </span>
-                      <span>Sagamu, Ogun State, Nigeria</span>
+                      <span>
+                        <span>
+                          6. Babatunde Awosanya Street, Jesu Walalaye Aiyegbami,
+                          Sagamu.
+                        </span>
+                        <span>{",  "}</span>
+                        <span>
+                          Km 3, Falilat Ogunkoya Avenue, Ode-Lemo Road, Sabo,
+                          Sagamu, Ogun State
+                        </span>
+                      </span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
