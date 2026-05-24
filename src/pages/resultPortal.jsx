@@ -38,10 +38,10 @@ const ResultPortal = () => {
   return (
     <div className="pt-20 min-h-screen">
       <Helmet>
-        <title>Result Portal | Ayodele Schools</title>
+        <title>Result Portal | Ayodele nursery & primary School</title>
         <meta
           name="description"
-          content="Access Ayodele Schools result portal — staff and student login."
+          content="Access Ayodele nursery & primary School result portal — staff and student login."
         />
       </Helmet>
 

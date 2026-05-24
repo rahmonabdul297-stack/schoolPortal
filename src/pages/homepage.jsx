@@ -59,10 +59,10 @@ const HomePage = () => {
       }`}
     >
       <Helmet>
-        <title>Ayodele Schools | Home</title>
+        <title>Ayodele nursery & primary School | Home</title>
         <meta
           name="description"
-          content="Ayodele Schools, Sagamu — quality primary and secondary education, scholarships, and academic excellence for over three decades."
+          content="Ayodele nursery & primary School, Sagamu — quality primary and secondary education, scholarships, and academic excellence for over three decades."
         />
       </Helmet>
 
@@ -81,11 +81,6 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/30" />
 
         <div className="container relative z-10 flex flex-col justify-center min-h-[88vh] lg:min-h-screen py-16 lg:py-24">
-          <span className="contact-hero-in inline-flex w-fit items-center gap-2 rounded-full border border-AppYellow/50 bg-AppYellow/10 px-4 py-1.5 text-AppYellow font-[ubuntu-sans-mono-font] text-xs uppercase tracking-widest mb-6">
-            <FaSchool aria-hidden />
-            Admissions open — Sagamu
-          </span>
-
           <h1 className="contact-hero-in contact-reveal-delay-1 text-AppWhite font-[ubuntu-sans-mono-font] text-4xl sm:text-5xl lg:text-7xl font-black uppercase leading-tight max-w-4xl">
             Where learning meets{" "}
             <span className="text-AppYellow welcomeAnim">excellence</span>
@@ -176,8 +171,8 @@ const HomePage = () => {
               Summary about us
             </p>
             <h2 className="font-[ubuntu-sans-mono-font] text-3xl sm:text-4xl font-black uppercase leading-snug">
-              Building futures in{" "}
-              <span className="text-AppYellow">Sagamu</span> since day one
+              Building futures in <span className="text-AppYellow">Sagamu</span>{" "}
+              since day one
             </h2>
             <p
               className={`font-[ubuntu-sans-mono-font] leading-relaxed ${
@@ -188,8 +183,8 @@ const HomePage = () => {
               <span className="font-bold">Late Mrs Ajike Olanike Omobo</span>,
               has served learners for over three decades. Our Primary section
               laid the foundation; the College followed in 2006. Today we offer
-              strong placement, scholarships, and programmes that help every pupil
-              find their path to success.
+              strong placement, scholarships, and programmes that help every
+              pupil find their path to success.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
@@ -326,7 +321,7 @@ const HomePage = () => {
                 dark ? "text-AppCream" : "text-AppBlack"
               }`}
             >
-              Why choose Ayodele Schools?
+              Why choose Ayodele nursery & primary School?
             </h2>
             <p
               className={`font-[ubuntu-sans-mono-font] mb-6 ${
@@ -352,9 +347,7 @@ const HomePage = () => {
                 className={`${panelClass} p-4 sm:p-5 flex flex-col gap-3 cursor-pointer transition-all duration-300 ${
                   selected === cont.id ? "ring-2 ring-AppYellow/50" : ""
                 }`}
-                onClick={() =>
-                  setSelected(selected === cont.id ? 0 : cont.id)
-                }
+                onClick={() => setSelected(selected === cont.id ? 0 : cont.id)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     setSelected(selected === cont.id ? 0 : cont.id);
@@ -404,7 +397,7 @@ const HomePage = () => {
                 dark ? "text-AppCream" : "text-AppBlack"
               }`}
             >
-              Ready to join Ayodele Schools?
+              Ready to join Ayodele nursery & primary School?
             </h2>
             <p
               className={`relative font-[ubuntu-sans-mono-font] max-w-xl mx-auto mb-8 ${

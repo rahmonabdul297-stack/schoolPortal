@@ -11,10 +11,10 @@ const Faq = () => {
   return (
     <div className="pt-20">
       <Helmet>
-        <title>FAQs | Ayodele schools</title>
+        <title>FAQs | Ayodele nursery & primary School</title>
         <meta
           name="description"
-          content="Frequently asked questions about Ayodele Schools — admissions, programmes, results, and more."
+          content="Frequently asked questions about Ayodele nursery & primary School — admissions, programmes, results, and more."
         />
       </Helmet>
 

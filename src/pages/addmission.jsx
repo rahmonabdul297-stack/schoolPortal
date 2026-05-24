@@ -41,10 +41,10 @@ const Addmission = () => {
   return (
     <div className={`pt-20 min-h-screen ${dark ? "bg-AppDark" : "bg-AppWhite"}`}>
       <Helmet>
-        <title>Admission | Ayodele Schools</title>
+        <title>Admission | Ayodele nursery & primary School</title>
         <meta
           name="description"
-          content="Primary school admission requirements and enrolment steps at Ayodele Schools, Sagamu."
+          content="Primary school admission requirements and enrolment steps at Ayodele nursery & primary School, Sagamu."
         />
       </Helmet>
 
@@ -62,7 +62,7 @@ const Addmission = () => {
             </h1>
             <p className="text-AppWhite/80 font-[ubuntu-sans-mono-font] max-w-2xl mx-auto mt-4 text-base sm:text-lg">
               Everything you need to prepare before your child gains admission
-              into Ayodele Schools Primary Section.
+              into Ayodele nursery & primary School Primary Section.
             </p>
           </div>
         </div>

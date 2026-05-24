@@ -112,7 +112,7 @@ const AboutPage = () => {
           <h4 className="text-AppYellow uppercase font-black font-[ubuntu-sans-mono-font] text-xl overflow-hidden">
             vision
           </h4>
-          Ayodele Schools strive to be the most successful and respected school
+          Ayodele nursery & primary School strive to be the most successful and respected school
           in the education industry. Building a nation of healthy and wealthy
           professionals with affinity for Excellence in service and delivery.
         </div>

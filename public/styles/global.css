@@ -32,7 +32,10 @@ body {
   font-style: normal;
   font-variation-settings: "width" 100;
 }
-
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
 body {
   font-family: Sohn, Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;

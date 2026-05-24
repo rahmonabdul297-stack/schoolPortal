@@ -25,10 +25,10 @@ const Scholarship = () => {
   return (
     <div className="pt-20 min-h-screen">
       <Helmet>
-        <title>Scholarship Scheme | Ayodele Schools</title>
+        <title>Scholarship Scheme | Ayodele nursery & primary School</title>
         <meta
           name="description"
-          content="Ayodele Schools scholarship scheme — empowering excellence and transforming lives through merit and need-based support."
+          content="Ayodele nursery & primary School scholarship scheme — empowering excellence and transforming lives through merit and need-based support."
         />
       </Helmet>
 

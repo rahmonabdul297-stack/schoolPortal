@@ -9,6 +9,7 @@ import { HashLink } from "react-router-hash-link";
 import Logo from "./logo/logo";
 import { Link } from "react-router-dom";
 import { navbar } from "./Arrays/array";
+import FooterLogo from "./logo/footerLogo";
 
 const GeneralFooter = () => {
   return (
@@ -82,10 +83,11 @@ const GeneralFooter = () => {
         </div>
         {/* logo */}
         <div className="flex items-center justify-center py-7">
-          <Logo />
+          <FooterLogo />
         </div>
-        <div className="text-center text-sm border-t py-2">
-          Copyright 2026. All rights reserved
+        <div className="text-AppCream/45 flex justify-between text-sm border-t py-2 capitalize">
+      <span>    © 2026 Ayodele nursery & primary school.</span>
+          <span> All rights reserved</span>
         </div>
       </div>
     </div>

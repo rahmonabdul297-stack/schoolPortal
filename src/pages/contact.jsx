@@ -137,10 +137,10 @@ const ContactPage = () => {
       className={`pt-20 min-h-screen ${dark ? "bg-AppDark" : "bg-AppWhite"}`}
     >
       <Helmet>
-        <title>Contact Us | Ayodele Schools</title>
+        <title>Contact Us | Ayodele nursery & primary School</title>
         <meta
           name="description"
-          content="Contact Ayodele Schools in Sagamu for admissions, enquiries, and support. Email ayodelecollege247@gmail.com."
+          content="Contact Ayodele nursery & primary School in Sagamu for admissions, enquiries, and support. Email ayodelecollege247@gmail.com."
         />
       </Helmet>
 
@@ -154,7 +154,7 @@ const ContactPage = () => {
               Get in touch
             </p>
             <h1 className="text-AppWhite font-[ubuntu-sans-mono-font] text-3xl sm:text-5xl lg:text-6xl font-black uppercase">
-              Contact Ayodele Schools
+              Contact Ayodele nursery & primary School
             </h1>
             <p className="text-AppWhite/80 font-[ubuntu-sans-mono-font] max-w-2xl mx-auto mt-4 text-base sm:text-lg">
               We are here to answer your questions about admissions, academics,
@@ -204,18 +204,12 @@ const ContactPage = () => {
                     </span>
                     <div>
                       <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
-                        Locations
+                        Location
                       </span>
                       <span>
                         <span>
                           6. Babatunde Awosanya Street, Jesu Walalaye Aiyegbami,
                           Sagamu.
-                        </span>
-                        <br />
-                        <br />
-                        <span>
-                          Km 3, Falilat Ogunkoya Avenue, Ode-Lemo Road, Sabo,
-                          Sagamu, Ogun State
                         </span>
                       </span>
                     </div>
@@ -228,7 +222,7 @@ const ContactPage = () => {
                       <span className="block font-bold uppercase text-xs tracking-wide text-AppYellow mb-1">
                         Office hours
                       </span>
-                      <span>Monday – Friday: 8:00 AM – 4:00 PM</span>
+                      <span>Monday – Friday: 7:00 AM – 4:00 PM</span>
                       <span className="block text-sm opacity-80 mt-1">
                         Saturday: 9:00 AM – 12:00 PM (by appointment)
                       </span>
@@ -311,8 +305,7 @@ const ContactPage = () => {
                     dark ? "text-AppCream/75" : "text-AppBlack/75"
                   }`}
                 >
-                  Before you visit or apply, here is a quick overview of Ayodele
-                  Schools — one of the leading institutions in Sagamu and
+                  Before you visit or apply, here is a quick overview of Ayodele nursery & primary School — one of the leading institutions in Sagamu and
                   surrounding communities.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
