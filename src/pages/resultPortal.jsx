@@ -7,7 +7,8 @@ import {
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { CartContext } from "../components/context/context";
-import { RESULT_PORTAL_CHECK_URL, RESULT_PORTAL_URL } from "../components/Arrays/array";
+import { RESULT_PORTAL_CHECK_URL, RESULT_PORTAL_URL ,CBT_PORTAL_CHECK_URL} from "../components/Arrays/array";
+import { MdOutlineComputer } from "react-icons/md";
 
 const portalCards = [
   {
@@ -29,6 +30,17 @@ const portalCards = [
     icon: FaGraduationCap,
     url: RESULT_PORTAL_CHECK_URL,
     cta: "Check my result",
+  },
+
+   {
+    id: "CBT",
+    title: "CBT portal",
+    subtitle: "Pupils",
+    description:
+      "Enter your test code to take online tests and examinations easily from your devices in a simple and secure enivironment",
+    icon: MdOutlineComputer,
+    url: CBT_PORTAL_CHECK_URL,
+    cta: "start exam",
   },
 ];
 

@@ -8,7 +8,7 @@ export const navbar=[
   {id:1,nav:"home",url:"/homepage", icon:   <FaHome />,target:""},
   {id:2,nav:"about us",url:"/about", icon:    <FaFile />,target:""},
   {id:3,nav:"admission",url:"/addmission", icon:<FaRegAddressCard />,target:""},
-  {id:4,nav:"result portal",url:"/result-portal", icon:"",target:""},
+  {id:4,nav:"school portal",url:"/result-portal", icon:"",target:""},
   {id:5,nav:"contact us",url:"/contact", icon:   <IoIosContacts />,target:""},
   {id:6,nav:"scholarship",url:"/scholarship", icon:"",target:""},
   {id:7,nav:"FAQs",url:"/faq", icon:"",target:""},
@@ -176,7 +176,7 @@ export const RESULT_PORTAL_URL =
   "https://result-management-kappa.vercel.app/";
   export const RESULT_PORTAL_CHECK_URL =
   "  https://result-management-kappa.vercel.app/checkResult";
-
+export const CBT_PORTAL_CHECK_URL="https://www.thatquiz.org/"
 
 export const primaryAdmissionRequirements = [
   {
